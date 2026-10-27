@@ -1,0 +1,69 @@
+**Title: Optimization of Exhaustive Search Using Dynamic Programming**
+
+**Aim:** To improve the performance of the 0/1 Knapsack Problem by replacing exhaustive search with dynamic programming and comparing their results.
+
+### Algorithm 1: Exhaustive Search
+
+**Input:** Item weights, item values, and knapsack capacity W.
+
+**Output:** Maximum achievable value.
+
+1. Start.
+2. Initialize maximum value to zero.
+3. Generate all possible subsets of the n items.
+4. For each subset:
+   a. Calculate its total weight and total value.
+   b. If its weight does not exceed W, compare its value with the current maximum.
+   c. If its value is greater, update the maximum value and selected items.
+5. Record the number of subsets examined and execution time.
+6. Return the maximum value and selected items.
+7. Stop.
+
+### Algorithm 2: Dynamic Programming
+
+**Input:** Item weights, item values, and knapsack capacity W.
+
+**Output:** Maximum achievable value.
+
+1. Start.
+2. Let n be the number of items.
+3. Create a DP table with (n + 1) rows and (W + 1) columns.
+4. Initialize the first row and first column to zero.
+5. For each item i from 1 to n:
+   a. For each capacity w from 0 to W:
+      i. Initially, exclude the current item:
+
+         `DP[i][w] = DP[i-1][w]`
+
+      ii. If the current item's weight is less than or equal to w, calculate:
+
+         `DP[i][w] = max(DP[i-1][w], value[i] + DP[i-1][w-weight[i]])`
+
+6. The maximum value is stored in `DP[n][W]`.
+7. Trace backward through the table to identify the selected items.
+8. Record the number of DP states processed and execution time.
+9. Return the maximum value and selected items.
+10. Stop.
+
+### Algorithm Comparison
+
+| Metric | Exhaustive Search | Dynamic Programming |
+|---|---|---|
+| Main technique | Examines all subsets | Stores solutions to subproblems |
+| Time complexity | O(n × 2ⁿ) | O(nW) |
+| Auxiliary space | O(n) | O(nW) |
+| Scalability | Poor for large n | Better when capacity W is manageable |
+| Optimal result | Yes | Yes, for the standard 0/1 Knapsack Problem |
+
+### Performance Evaluation
+
+1. Run both algorithms using identical datasets.
+2. Record their execution times and operation counts.
+3. Compare their maximum values to verify correctness.
+4. Calculate the measured speedup using:
+
+   `Speedup = Exhaustive Search Time / Dynamic Programming Time`
+
+5. Explain the performance differences and the memory trade-off.
+
+**Expected Conclusion:** Dynamic programming avoids enumerating every possible subset. It generally performs better when the knapsack capacity is manageable, while requiring more memory for the DP table.

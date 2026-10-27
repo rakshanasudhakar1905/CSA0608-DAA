@@ -1,0 +1,112 @@
+# Q1: Sorting Algorithms
+## 1. Selection Sort
+**Pseudocode:**
+ALGORITHM SelectionSort(data)
+    arr ← COPY(data)
+    comparisons ← 0
+    swaps ← 0
+    FOR i ← 0 TO LENGTH(arr) - 1
+        min_index ← i
+        FOR j ← i + 1 TO LENGTH(arr) - 1
+            comparisons ← comparisons + 1
+            IF arr[j] < arr[min_index] THEN
+                min_index ← j
+            END IF
+        END FOR
+        IF min_index ≠ i THEN
+            SWAP arr[i] AND arr[min_index]
+            swaps ← swaps + 1
+        END IF
+    END FOR
+    RETURN arr, comparisons, swaps
+END ALGORITHM
+## 2. Bubble Sort
+**Pseudocode:**
+ALGORITHM BubbleSort(data)
+    arr ← COPY(data)
+    comparisons ← 0
+    swaps ← 0
+    FOR i ← 0 TO LENGTH(arr) - 1
+        swapped ← FALSE
+        FOR j ← 0 TO LENGTH(arr) - i - 2
+            comparisons ← comparisons + 1
+            IF arr[j] > arr[j + 1] THEN
+                SWAP arr[j] AND arr[j + 1]
+                swaps ← swaps + 1
+                swapped ← TRUE
+            END IF
+        END FOR
+        IF swapped = FALSE THEN
+            BREAK
+        END IF
+    END FOR
+    RETURN arr, comparisons, swaps
+END ALGORITHM
+## 3. Insertion Sort
+**Pseudocode:**
+ALGORITHM InsertionSort(data)
+    arr ← COPY(data)
+    comparisons ← 0
+    movements ← 0
+    FOR i ← 1 TO LENGTH(arr) - 1
+        key ← arr[i]
+        j ← i - 1
+        WHILE j ≥ 0
+            comparisons ← comparisons + 1
+            IF arr[j] > key THEN
+                arr[j + 1] ← arr[j]
+                movements ← movements + 1
+                j ← j - 1
+            ELSE
+                BREAK
+            END IF
+        END WHILE
+        arr[j + 1] ← key
+        movements ← movements + 1
+    END FOR
+    RETURN arr, comparisons, movements
+END ALGORITHM
+## 4. Generate Test Datasets
+**Pseudocode:**
+ALGORITHM GenerateDatasets
+    SET random seed to 42
+    CREATE Already Sorted dataset
+        VALUES from 1 to 100
+    CREATE Reverse Sorted dataset
+        VALUES from 100 down to 1
+    CREATE Random Data dataset
+        SELECT 100 unique random numbers
+        FROM the range 1 to 1000
+    CREATE Nearly Sorted dataset
+        COPY the Already Sorted dataset
+    REPEAT 5 TIMES
+        SELECT two random positions
+        SWAP the values at those positions
+    END REPEAT
+    RETURN all four datasets
+END ALGORITHM
+## 5. Main Program
+**Pseudocode:**
+ALGORITHM Main
+    datasets ← GenerateDatasets()
+    algorithms ←
+        Selection Sort
+        Bubble Sort
+        Insertion Sort
+    FOR EACH dataset IN datasets
+        DISPLAY dataset name
+        DISPLAY input size
+        FOR EACH algorithm IN algorithms
+            START execution timer
+            result, comparisons, movements, elapsed
+                ← EXECUTE algorithm(dataset)
+            STOP execution timer
+            CHECK whether result equals sorted dataset
+            DISPLAY algorithm name
+            DISPLAY comparisons
+            DISPLAY swaps or movements
+            DISPLAY execution time
+            DISPLAY sorting correctness
+        END FOR
+    END FOR
+END ALGORITHM

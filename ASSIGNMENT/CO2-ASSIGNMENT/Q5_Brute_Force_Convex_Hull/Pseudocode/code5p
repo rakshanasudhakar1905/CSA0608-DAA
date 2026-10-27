@@ -1,0 +1,21 @@
+**Algorithm: Brute-Force Convex Hull**
+**Input:** A set of points in a two-dimensional plane  
+**Output:** Points identified on the convex hull boundary
+1. Start.
+2. Read the input points.
+3. Initialize an empty set called `hull_points`.
+4. For every pair of distinct points `A` and `B`:
+   a. Set `positive = false` and `negative = false`.
+   b. Check every other point `C`.
+   c. Calculate the cross product:
+      `cross = (Bx - Ax) * (Cy - Ay) - (By - Ay) * (Cx - Ax)`
+   d. If `cross > 0`, set `positive = true`.
+   e. If `cross < 0`, set `negative = true`.
+   f. If both flags become true, stop checking this pair because points lie on both sides of the line.
+   g. Otherwise, the line through `A` and `B` is a supporting-line candidate. Add `A` and `B` to `hull_points`.
+5. Remove duplicate points from `hull_points`.
+6. Calculate the center of the identified hull points.
+7. Sort the hull points by their angle around the center to obtain a boundary order.
+8. Display the hull points and connect them to visualize the convex hull.
+9. Record the number of orientation tests and execution time.
+10. Stop.

@@ -1,0 +1,45 @@
+# Q3: Brute-Force String Matching
+## 1. Algorithm: Brute-Force String Matching
+ALGORITHM BruteForceSearch(text, pattern)
+    comparisons ← 0
+    positions ← empty list
+    n ← LENGTH(text)
+    m ← LENGTH(pattern)
+    IF m = 0 THEN
+        RETURN positions, comparisons
+    END IF
+    FOR i ← 0 TO n - m
+        j ← 0
+        WHILE j < m
+            comparisons ← comparisons + 1
+            IF text[i + j] ≠ pattern[j] THEN
+                BREAK
+            END IF
+            j ← j + 1
+        END WHILE
+        IF j = m THEN
+            ADD i TO positions
+        END IF
+    END FOR
+    RETURN positions, comparisons
+END ALGORITHM
+## 2. Algorithm: Performance Testing
+ALGORITHM Main
+    CREATE test cases:
+        Early Match
+        Match Near the End
+        Repeated Prefix Challenge
+        Pattern Not Found
+    FOR EACH test case
+        GET text and pattern
+        START TIMER
+        CALL BruteForceSearch(text, pattern)
+        STOP TIMER
+        DISPLAY test case name
+        DISPLAY text length
+        DISPLAY pattern
+        DISPLAY match positions
+        DISPLAY character comparisons
+        DISPLAY execution time
+    END FOR
+END ALGORITHM

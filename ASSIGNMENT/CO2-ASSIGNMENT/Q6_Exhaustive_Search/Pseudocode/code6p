@@ -1,0 +1,27 @@
+**Algorithm: Exhaustive Search for the 0/1 Knapsack Problem**
+**Input:**
+- Number of items: n
+- Weight of each item: weights[i]
+- Value of each item: values[i]
+- Maximum capacity: W
+**Output:** The selected items with the maximum possible total value.
+1. Start.
+2. Read the weights, values, and capacity of the knapsack.
+3. Initialize best_value = 0 and best_subset = empty.
+4. Calculate the total number of subsets: 2^n.
+5. For each subset from 0 to 2^n - 1:
+   a. Initialize total_weight = 0.
+   b. Initialize total_value = 0.
+   c. Initialize selected_items = empty.
+   d. Examine each item.
+   e. If the item belongs to the current subset:
+      - Add its weight to total_weight.
+      - Add its value to total_value.
+      - Add the item to selected_items.
+   f. If total_weight is less than or equal to W:
+      - If total_value is greater than best_value:
+        i. Set best_value = total_value.
+        ii. Set best_subset = selected_items.
+6. Display best_subset and best_value.
+7. Display the number of subsets examined and execution time.
+8. Stop.
