@@ -1,0 +1,7 @@
+alerts,dataset,insertion_key_comparisons
+1000,nearly_sorted_1pct_swaps,5522
+1000,random,222630
+5000,nearly_sorted_1pct_swaps,169385
+5000,random,5576869
+10000,nearly_sorted_1pct_swaps,631440
+10000,random,22723648

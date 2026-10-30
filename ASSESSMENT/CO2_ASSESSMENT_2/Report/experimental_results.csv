@@ -1,0 +1,4 @@
+events,brute_distance_computations,optimized_distance_computations,brute_time_seconds,optimized_time_seconds,same_pair_and_distance
+1000,499500,1112,0.078637,0.004717,True
+4000,7998000,4605,1.287037,0.023557,True
+8000,31996000,9291,4.923591,0.046864,True

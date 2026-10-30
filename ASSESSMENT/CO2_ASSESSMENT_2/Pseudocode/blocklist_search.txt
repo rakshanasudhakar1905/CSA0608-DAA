@@ -1,0 +1,6 @@
+ALGORITHM ReusableBlocklistLookup(blocklist, queries)
+1. blocked_set = SET(blocklist)             // build once: O(B)
+2. FOR EACH ip IN queries
+3.     IF ip IN blocked_set: output TRUE    // average O(1)
+4.     ELSE: output FALSE
+5. RETURN outputs

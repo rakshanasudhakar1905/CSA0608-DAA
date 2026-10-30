@@ -1,0 +1,68 @@
+PASS: corrected insertion sort + stability
+PASS: optimised stable sort
+PASS: empty sort
+PASS: already sorted sort
+PASS: sequential search: present
+PASS: sequential search: absent
+PASS: sequential search: empty blocklist
+PASS: set lookup: present
+PASS: set lookup: absent
+PASS: set lookup: empty set
+PASS: brute-force scan: sample
+PASS: KMP scan: sample
+PASS: KMP overlapping matches
+PASS: KMP final-position match
+PASS: KMP pattern longer than log
+PASS: KMP empty pattern boundaries
+PASS: KMP no match
+PASS: corrected closest pair sample
+PASS: optimised closest pair matches corrected
+PASS: closest pair: empty events
+PASS: closest pair: one event
+PASS: closest pair: duplicate coordinates
+PASS: closest pair: two events
+PASS: random closest-pair cross-check n=2
+PASS: random closest-pair cross-check n=3
+PASS: random closest-pair cross-check n=4
+PASS: random closest-pair cross-check n=5
+PASS: random closest-pair cross-check n=6
+PASS: random closest-pair cross-check n=7
+PASS: random closest-pair cross-check n=8
+PASS: random closest-pair cross-check n=9
+PASS: random closest-pair cross-check n=10
+PASS: random closest-pair cross-check n=11
+PASS: random closest-pair cross-check n=12
+PASS: random closest-pair cross-check n=13
+PASS: random closest-pair cross-check n=14
+PASS: random closest-pair cross-check n=15
+PASS: random closest-pair cross-check n=16
+PASS: random closest-pair cross-check n=17
+PASS: random closest-pair cross-check n=18
+PASS: random closest-pair cross-check n=19
+PASS: random closest-pair cross-check n=20
+PASS: random closest-pair cross-check n=21
+PASS: random closest-pair cross-check n=22
+PASS: random closest-pair cross-check n=23
+PASS: random closest-pair cross-check n=24
+PASS: random closest-pair cross-check n=25
+PASS: random closest-pair cross-check n=26
+PASS: random closest-pair cross-check n=27
+PASS: random closest-pair cross-check n=28
+PASS: random closest-pair cross-check n=29
+PASS: random closest-pair cross-check n=30
+PASS: random closest-pair cross-check n=31
+PASS: random closest-pair cross-check n=32
+PASS: random closest-pair cross-check n=33
+PASS: random closest-pair cross-check n=34
+
+ALL TESTS PASSED: 56
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

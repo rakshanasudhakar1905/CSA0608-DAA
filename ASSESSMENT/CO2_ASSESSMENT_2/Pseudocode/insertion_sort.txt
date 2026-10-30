@@ -1,0 +1,9 @@
+ALGORITHM StableDescendingSort(alerts)
+1. FOR i = 1 TO length(alerts)-1
+2.     key = alerts[i]; j = i-1
+3.     WHILE j >= 0 AND alerts[j].severity < key.severity
+4.         alerts[j+1] = alerts[j]
+5.         j = j-1
+6.     alerts[j+1] = key
+7. RETURN alerts
+Optimised version: use the language's stable Timsort with key=severity and reverse=True.

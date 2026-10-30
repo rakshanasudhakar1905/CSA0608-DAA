@@ -1,0 +1,14 @@
+ALGORITHM ClosestPair2D(events)
+1. IF fewer than 2 events: return (None, None)
+2. Convert points to (x,y,original_index); detect duplicate coordinates.
+3. If duplicates exist, return lexicographically smallest zero-distance pair.
+4. Sort points by x and by y.
+5. RECURSIVE SOLVE(px, py):
+   a. For <=3 points, compare each unique pair using squared distance.
+   b. Split px at the median x; partition py using point identities.
+   c. Recursively solve left and right halves; keep the smaller squared distance.
+   d. Build the y-sorted strip within current best distance of the split.
+   e. Compare at most the next 7 strip points; stop when dy^2 exceeds best.
+   f. Return best squared distance and original index pair (lexicographic tie-break).
+6. Return pair and sqrt(best_squared_distance) once.
+Time: O(n log n); auxiliary space: O(n).

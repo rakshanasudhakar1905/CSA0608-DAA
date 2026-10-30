@@ -1,0 +1,12 @@
+ALGORITHM KMP_AllMatches(text, pattern)
+1. IF pattern is empty: return all boundaries 0..length(text)
+2. IF pattern longer than text: return []
+3. Build LPS[] (longest proper prefix that is also suffix) for pattern.
+4. Set i=0, j=0
+5. WHILE i < length(text):
+6.     IF text[i] == pattern[j]: increment i and j
+7.         IF j == length(pattern): record i-j; set j=LPS[j-1]
+8.     ELSE IF j > 0: set j=LPS[j-1] (do not move i)
+9.     ELSE: increment i
+10. RETURN all positions
+Time: O(n+m); space: O(m), excluding output.

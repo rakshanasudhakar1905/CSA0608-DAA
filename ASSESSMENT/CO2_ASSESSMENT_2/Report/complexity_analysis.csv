@@ -1,0 +1,5 @@
+Function,Corrected time complexity,Optimised time complexity,Auxiliary space
+Alert sorting,O(n^2) worst; O(n) best,O(n log n) worst; O(n) on natural runs,Insertion O(1); Timsort O(n) worst-case temp
+Blocklist lookup,O(Q*B) for Q sequential searches,O(B+Q) average with one reusable set,O(B) set
+Signature matching,"O((L-M+1)*M), worst O(L*M)",O(L+M) KMP,Brute O(1); KMP O(M)
+Closest pair,"O(N^2), N(N-1)/2 pair distances",O(N log N) divide-and-conquer,O(N)

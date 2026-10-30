@@ -1,0 +1,12 @@
+CLOSEST-PAIR BENCHMARKS
+{'events': 1000, 'brute_distance_computations': 499500, 'optimized_distance_computations': 1112, 'brute_time_seconds': 0.078637, 'optimized_time_seconds': 0.004717, 'same_pair_and_distance': True}
+{'events': 4000, 'brute_distance_computations': 7998000, 'optimized_distance_computations': 4605, 'brute_time_seconds': 1.287037, 'optimized_time_seconds': 0.023557, 'same_pair_and_distance': True}
+{'events': 8000, 'brute_distance_computations': 31996000, 'optimized_distance_computations': 9291, 'brute_time_seconds': 4.923591, 'optimized_time_seconds': 0.046864, 'same_pair_and_distance': True}
+
+INSERTION SORT COMPARISONS
+{'alerts': 1000, 'dataset': 'nearly_sorted_1pct_swaps', 'insertion_key_comparisons': 5522}
+{'alerts': 1000, 'dataset': 'random', 'insertion_key_comparisons': 222630}
+{'alerts': 5000, 'dataset': 'nearly_sorted_1pct_swaps', 'insertion_key_comparisons': 169385}
+{'alerts': 5000, 'dataset': 'random', 'insertion_key_comparisons': 5576869}
+{'alerts': 10000, 'dataset': 'nearly_sorted_1pct_swaps', 'insertion_key_comparisons': 631440}
+{'alerts': 10000, 'dataset': 'random', 'insertion_key_comparisons': 22723648}
