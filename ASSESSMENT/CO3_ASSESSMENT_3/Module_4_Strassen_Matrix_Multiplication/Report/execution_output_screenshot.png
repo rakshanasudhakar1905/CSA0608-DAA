@@ -1,0 +1,15 @@
+STRASSEN(A, B)
+1. If n is small (base case), multiply conventionally
+2. Partition A into A11,A12,A21,A22 and B into B11,B12,B21,B22
+3. M1=(A11+A22)(B11+B22)
+4. M2=(A21+A22)B11
+5. M3=A11(B12-B22)
+6. M4=A22(B21-B11)
+7. M5=(A11+A12)B22
+8. M6=(A21-A11)(B11+B12)
+9. M7=(A12-A22)(B21+B22)
+10. C11=M1+M4-M5+M7
+11. C12=M3+M5
+12. C21=M2+M4
+13. C22=M1-M2+M3+M6
+14. Join the four C blocks

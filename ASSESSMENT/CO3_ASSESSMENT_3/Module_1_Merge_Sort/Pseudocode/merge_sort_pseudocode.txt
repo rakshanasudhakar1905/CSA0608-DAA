@@ -1,0 +1,14 @@
+MERGE_SORT(A)
+1. If length(A) <= 1, return A
+2. Split A into left half L and right half R
+3. L = MERGE_SORT(L)
+4. R = MERGE_SORT(R)
+5. Return STABLE_MERGE(L, R)
+
+STABLE_MERGE(L, R)
+1. Create empty result
+2. Compare the first remaining item in L and R
+3. Append the smaller timestamp
+4. If timestamps are equal, append the item from L first
+5. Append any remaining items
+6. Return result

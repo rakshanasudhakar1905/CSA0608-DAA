@@ -1,0 +1,30 @@
+KartIQ recommended design
+1. Nightly consolidation: stable Merge Sort. Time O(N log N), auxiliary memory O(N).
+   For data larger than RAM, use external merge sort (sorted disk runs + multiway merge).
+2. Live leaderboard: median-of-three Quick Sort for full rebuilds; in production consider
+   incremental ordered-index updates when only a few seller scores change. Average O(S log S),
+   worst O(S^2), recursion stack average O(log S).
+3. Lookup: lower-bound Binary Search over timestamp-sorted orders. O(log N) time, O(1) extra space.
+4. Recommendations: Strassen for sufficiently large dense matrices, with conventional
+   multiplication below a tuned cutoff. O(n^log2(7)) arithmetic operations; extra temporary
+   memory is higher than conventional multiplication.
+
+Important counts for N=10,000,000:
+- Merge sort comparison upper bound is approximately N*ceil(log2 N) - 2^ceil(log2 N) + 1
+  for a balanced merge tree with uneven final levels; use N log2 N as an order estimate.
+- log2(10,000,000) ≈ 23.2535, so N log2 N ≈ 232.5 million comparison-scale operations.
+- Binary search needs at most ceil(log2(N+1)) = 24 comparisons for a lower-bound search
+  (depending on loop formulation, a conservative bound is 24).
+
+For 100,000 already sorted sellers:
+- First-element pivot can produce 100,000 + 99,999 + ... + 1? The exact comparisons are
+  n(n-1)/2 = 4,999,950,000 in the fully sorted worst case.
+- Balanced partitions are approximately n log2 n ≈ 1,660,964 comparison-scale operations.
+- Nearly sorted does not automatically mean Quick Sort is safe; pivot selection matters.
+
+Strassen:
+T(n)=7T(n/2)+Theta(n^2), so T(n)=Theta(n^log2(7)) ≈ Theta(n^2.8074).
+For n=1024: conventional scalar multiplications = n^3 = 1,073,741,824.
+Ideal Strassen leaf multiplications = 7^10 = 282,475,249.
+Theoretical reduction ≈ 73.7%; actual performance depends on additions, memory traffic,
+allocation, numeric type, cache behaviour and cutoff.

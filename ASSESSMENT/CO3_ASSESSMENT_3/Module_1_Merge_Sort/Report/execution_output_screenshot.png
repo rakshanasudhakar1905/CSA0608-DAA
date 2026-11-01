@@ -1,0 +1,37 @@
+"""Stable merge sort for KartIQ order consolidation."""
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        # <= is important: it preserves original arrival order for equal keys.
+        if left[i][0] <= right[j][0]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+def merge_sort(items, depth=0, show_trace=False):
+    if len(items) <= 1:
+        return items[:]
+    mid = len(items) // 2
+    left = merge_sort(items[:mid], depth + 1, show_trace)
+    right = merge_sort(items[mid:], depth + 1, show_trace)
+    merged = merge(left, right)
+    if show_trace:
+        indent = "  " * depth
+        print(f"{indent}Merge {left} + {right} -> {merged}")
+    return merged
+
+if __name__ == "__main__":
+    orders = [(105, "O1"), (102, "O2"), (105, "O3"),
+              (101, "O4"), (102, "O5"), (103, "O6")]
+    print("Input :", orders)
+    sorted_orders = merge_sort(orders, show_trace=True)
+    print("Sorted:", sorted_orders)
+    print("Expected stable order for timestamp 102: O2 before O5")
+    print("Expected stable order for timestamp 105: O1 before O3")

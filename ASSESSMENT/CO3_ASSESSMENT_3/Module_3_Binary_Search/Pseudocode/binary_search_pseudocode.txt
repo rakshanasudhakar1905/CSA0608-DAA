@@ -1,0 +1,10 @@
+FIRST_OCCURRENCE(A, target)
+1. low = 0; high = length(A)-1; answer = -1
+2. While low <= high:
+3.    mid = floor((low+high)/2)
+4.    If A[mid].timestamp >= target:
+5.       If A[mid].timestamp == target: answer = mid
+6.       high = mid-1
+7.    Else:
+8.       low = mid+1
+9. Return answer
