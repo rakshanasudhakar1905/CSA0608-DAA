@@ -1,0 +1,15 @@
+MEDIAN OF MEDIANS
+1. Divide the array into groups of at most five elements.
+2. Sort each group and take its median.
+3. Recursively find the median of the group medians.
+4. Use this value as pivot.
+5. Partition the original array into values below, equal to, and above pivot.
+6. Recurse only into the partition containing the required k-th element.
+
+MEET-IN-THE-MIDDLE SUBSET SUM
+1. Divide the input array into two halves.
+2. Generate all subset sums of the left half.
+3. Generate all subset sums of the right half.
+4. Sort the right-half sums.
+5. For every left sum s, binary-search for target-s in the right sums.
+6. Return true if a matching pair is found; otherwise return false.

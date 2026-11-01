@@ -1,0 +1,6 @@
+Final joint design: Count inversions using merge-sort decomposition.
+Subproblems: Count inversions in left and right halves.
+Base case: n <= 1, return 0.
+Returned information: Sorted subarray and inversion count.
+Combine: Merge in sorted order; when right[j] < left[i], add len(left)-i.
+Recurrence: T(n)=2T(n/2)+O(n), so T(n)=O(n log n).

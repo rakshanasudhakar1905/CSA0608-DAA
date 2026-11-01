@@ -1,0 +1,7 @@
+STRASSEN:
+1. If matrix size is at or below cutoff, use conventional multiplication.
+2. Divide each matrix into four equal blocks.
+3. Compute seven recursive products M1 through M7 using Strassen's formulas.
+4. Reconstruct C11, C12, C21, C22 using additions and subtractions.
+5. Join the four result blocks.
+6. Pad non-power-of-two matrices with zeros before recursion and crop the result.

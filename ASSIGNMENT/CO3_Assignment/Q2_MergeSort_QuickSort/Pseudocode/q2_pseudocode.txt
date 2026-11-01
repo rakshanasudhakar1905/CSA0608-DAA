@@ -1,0 +1,12 @@
+MERGE SORT:
+1. If array size <= 1, return.
+2. Divide array into left and right halves.
+3. Recursively sort both halves.
+4. Merge the two sorted halves by repeatedly selecting the smaller front item.
+
+QUICK SORT:
+1. If array size <= 1, return.
+2. Select pivot using the stated strategy.
+3. Partition values into less-than, equal-to, and greater-than pivot groups.
+4. Recursively sort less-than and greater-than groups.
+5. Concatenate left, equal, and right groups.

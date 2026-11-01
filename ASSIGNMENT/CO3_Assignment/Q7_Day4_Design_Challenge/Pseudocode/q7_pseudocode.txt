@@ -1,0 +1,9 @@
+COUNTING INVERSIONS:
+1. If array length is 0 or 1, return inversion count 0.
+2. Divide the array into two halves.
+3. Recursively count inversions in the left half.
+4. Recursively count inversions in the right half.
+5. Merge the sorted halves.
+6. When a right element is selected before remaining left elements, add the
+   number of remaining left elements to the cross-inversion count.
+7. Return the merged sorted array and the sum of left, right, and cross counts.

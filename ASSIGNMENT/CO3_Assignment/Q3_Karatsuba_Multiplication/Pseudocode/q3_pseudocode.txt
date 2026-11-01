@@ -1,0 +1,6 @@
+KARATSUBA:
+1. If either integer is a single-digit/base-case value, multiply directly.
+2. Split x into a*10^m+b and y into c*10^m+d.
+3. Compute ac, bd, and (a+b)(c+d) recursively.
+4. Compute ad+bc = (a+b)(c+d)-ac-bd.
+5. Return ac*10^(2m)+(ad+bc)*10^m+bd.

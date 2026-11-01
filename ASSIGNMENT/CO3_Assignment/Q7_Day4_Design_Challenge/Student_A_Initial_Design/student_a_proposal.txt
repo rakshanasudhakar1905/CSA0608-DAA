@@ -1,0 +1,5 @@
+Problem selected: Counting inversions in an array.
+Proposed decomposition: Split the array into two halves.
+Base case: An array of size 0 or 1 has zero inversions.
+Information returned: Sorted half and inversion count.
+Combine idea: Merge sorted halves and count cross inversions.

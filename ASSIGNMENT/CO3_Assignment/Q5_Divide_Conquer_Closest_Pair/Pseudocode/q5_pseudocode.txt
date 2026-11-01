@@ -1,0 +1,9 @@
+CLOSEST PAIR D&C:
+1. Sort points by x-coordinate and y-coordinate.
+2. For at most three points, check every pair directly.
+3. Divide points into left and right halves using the x-median.
+4. Recursively find the closest pair in each half.
+5. Let d be the smaller of the two distances.
+6. Build a vertical strip of points within distance d of the dividing line.
+7. In y-sorted order, compare each strip point with at most the next seven points.
+8. Return the best distance and pair.
