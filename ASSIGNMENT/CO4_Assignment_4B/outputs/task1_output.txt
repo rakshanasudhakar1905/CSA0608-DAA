@@ -1,0 +1,78 @@
+=== TASK 1.1 & 1.2: BASELINE EXECUTION (W = 24) ===
+Max Line Width (W) = 24 | Total Words = 12
+Minimum Total Penalty = 143
+-----------------------------------------------------------------
+Line  | Content                  | Unused | Penalty
+-----------------------------------------------------------------
+1     | Dynamic programming      | 5      | 25
+2     | solves complex           | 10     | 100
+3     | optimization problems    | 3      | 9
+4     | by breaking them into    | 3      | 9
+5     | overlapping subproblems  | 1      | 0 (Final)
+-----------------------------------------------------------------
+[Intermediate DP States: dp[i] = min penalty for words[i..n-1]]
+  dp[ 0] ('Dynamic'): cost =  143 -> breaks after word[1] ('programming')
+  dp[ 1] ('programming'): cost =   77 -> breaks after word[2] ('solves')
+  dp[ 2] ('solves'): cost =  118 -> breaks after word[3] ('complex')
+  dp[ 3] ('complex'): cost =   41 -> breaks after word[4] ('optimization')
+  dp[ 4] ('optimization'): cost =   18 -> breaks after word[5] ('problems')
+  dp[ 5] ('problems'): cost =   25 -> breaks after word[7] ('breaking')
+  dp[ 6] ('by'): cost =    9 -> breaks after word[9] ('into')
+  dp[ 7] ('breaking'): cost =   36 -> breaks after word[9] ('into')
+  dp[ 8] ('them'): cost =    9 -> breaks after word[10] ('overlapping')
+  dp[ 9] ('into'): cost =   64 -> breaks after word[10] ('overlapping')
+  dp[10] ('overlapping'): cost =    0 -> breaks after word[11] ('subproblems')
+  dp[11] ('subproblems'): cost =    0 -> breaks after word[11] ('subproblems')
+  dp[12] (Base Case): cost = 0
+
+=== TASK 1.3: REQUIREMENT CHANGE (MODIFIED WIDTHS W = 20, 28, 32) ===
+--- Modified Width W = 20 ---
+Max Line Width (W) = 20 | Total Words = 12
+Minimum Total Penalty = 247
+-----------------------------------------------------------------
+Line  | Content              | Unused | Penalty
+-----------------------------------------------------------------
+1     | Dynamic programming  | 1      | 1
+2     | solves complex       | 6      | 36
+3     | optimization         | 8      | 64
+4     | problems by          | 9      | 81
+5     | breaking them        | 7      | 49
+6     | into overlapping     | 4      | 16
+7     | subproblems          | 9      | 0 (Final)
+-----------------------------------------------------------------
+--- Modified Width W = 28 ---
+Max Line Width (W) = 28 | Total Words = 12
+Minimum Total Penalty = 77
+-----------------------------------------------------------------
+Line  | Content                      | Unused | Penalty
+-----------------------------------------------------------------
+1     | Dynamic programming solves   | 2      | 4
+2     | complex optimization         | 8      | 64
+3     | problems by breaking them    | 3      | 9
+4     | into overlapping subproblems | 0      | 0 (Final)
+-----------------------------------------------------------------
+--- Modified Width W = 32 ---
+Max Line Width (W) = 32 | Total Words = 12
+Minimum Total Penalty = 40
+-----------------------------------------------------------------
+Line  | Content                          | Unused | Penalty
+-----------------------------------------------------------------
+1     | Dynamic programming solves       | 6      | 36
+2     | complex optimization problems by | 0      | 0
+3     | breaking them into overlapping   | 2      | 4
+4     | subproblems                      | 21     | 0 (Final)
+-----------------------------------------------------------------
+
+=== TASK 1.4: BOUNDARY TEST CASES ===
+[Boundary Test A: Exact Tight Fit W = 10]
+Max Line Width (W) = 10 | Total Words = 4
+Minimum Total Penalty = 25
+-----------------------------------------------------------------
+Line  | Content    | Unused | Penalty
+-----------------------------------------------------------------
+1     | alpha      | 5      | 25
+2     | beta gamma | 0      | 0
+3     | delta      | 5      | 0 (Final)
+-----------------------------------------------------------------
+[Boundary Test B: Word Exceeding Line Width W = 8]
+Caught Expected Exception: Word 'extraordinary' (length 13) exceeds maximum line width 8.

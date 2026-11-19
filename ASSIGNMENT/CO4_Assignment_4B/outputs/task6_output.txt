@@ -1,0 +1,23 @@
+=== TASK 6.3: LAST-MILE DELIVERY ROUTE (HUB + 6 LOCATIONS) ===
+Optimal Route: Hub -> D -> C -> F -> E -> A -> B -> Hub
+Minimum Travel Cost = 59 | States Evaluated = 492
+
+=== TASK 6.4: INDEPENDENT VALIDATION (HUB + 4 LOCATIONS) ===
+Exhaustive Enumeration (4! = 24): Cost = 47 | Route = Hub -> A -> B -> C -> D -> Hub
+Held-Karp Bitmask DP Result     : Cost = 47 | Route = Hub -> D -> C -> B -> A -> Hub
+Validation Status: EXACT MATCH CONFIRMED.
+
+=== TASK 6.5: STATE-SPACE GROWTH SCALING EXPERIMENT (n = 4 to 14) ===
+Deliveries (n)  | Subsets (2^n)  | States Eval    | Time (ms)    | Peak Mem (KB)
+----------------------------------------------------------------------------
+4               | 16             | 56             | 0.439        | 1.88
+5               | 32             | 170            | 1.051        | 4.36
+6               | 64             | 492            | 2.989        | 11.93
+7               | 128            | 1358           | 6.602        | 28.38
+8               | 256            | 3600           | 14.154       | 64.57
+9               | 512            | 9234           | 32.808       | 140.71
+10              | 1024           | 23060          | 80.091       | 301.80
+11              | 2048           | 56342          | 182.200      | 640.12
+12              | 4096           | 135192         | 453.470      | 1341.05
+13              | 8192           | 319514         | 1056.169     | 2815.80
+14              | 16384          | 745500         | 2352.288     | 5895.37

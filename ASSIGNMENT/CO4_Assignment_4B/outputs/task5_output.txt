@@ -1,0 +1,30 @@
+=== TASK 5.1: UNIQUE MST COMPARISON ===
+--- Kruskal's (Cost = 42) ---
+   ACCEPT (F4-F6, w=4): Merges components.
+   ACCEPT (F1-F4, w=5): Merges components.
+   ACCEPT (F3-F5, w=6): Merges components.
+   ACCEPT (F1-F2, w=7): Merges components.
+   ACCEPT (F2-F3, w=8): Merges components.
+   REJECT (F2-F4, w=9): Forms cycle.
+   REJECT (F2-F5, w=10): Forms cycle.
+   REJECT (F5-F6, w=11): Forms cycle.
+   ACCEPT (F5-F7, w=12): Merges components.
+  MST: [('F4', 'F6', 4), ('F1', 'F4', 5), ('F3', 'F5', 6), ('F1', 'F2', 7), ('F2', 'F3', 8), ('F5', 'F7', 12)]
+--- Prim's (Cost = 42) ---
+   INIT: Root 'F1'
+   ADD (F1-F4, w=5): Minimum cut edge to 'F4'.
+   ADD (F4-F6, w=4): Minimum cut edge to 'F6'.
+   ADD (F1-F2, w=7): Minimum cut edge to 'F2'.
+   ADD (F2-F3, w=8): Minimum cut edge to 'F3'.
+   ADD (F3-F5, w=6): Minimum cut edge to 'F5'.
+   ADD (F5-F7, w=12): Minimum cut edge to 'F7'.
+  MST: [('F1', 'F4', 5), ('F4', 'F6', 4), ('F1', 'F2', 7), ('F2', 'F3', 8), ('F3', 'F5', 6), ('F5', 'F7', 12)]
+--- Boruvka's (Cost = 42) ---
+   ROUND 1: Added (F1-F4, w=5), (F1-F2, w=7), (F4-F6, w=4), (F3-F5, w=6), (F5-F7, w=12)
+   ROUND 2: Added (F2-F3, w=8)
+  MST: [('F1', 'F4', 5), ('F1', 'F2', 7), ('F4', 'F6', 4), ('F3', 'F5', 6), ('F5', 'F7', 12), ('F2', 'F3', 8)]
+
+=== TASK 5.2: STRESS TEST (MULTIPLE VALID MSTS WITH TIED WEIGHTS) ===
+Kruskal's  | Cost = 34 | Edges = [('F4', 'F6', 4), ('F1', 'F2', 5), ('F1', 'F4', 5), ('F2', 'F3', 6), ('F2', 'F5', 6), ('F5', 'F7', 8)]
+Prim's     | Cost = 34 | Edges = [('F4', 'F6', 4), ('F4', 'F1', 5), ('F1', 'F2', 5), ('F2', 'F3', 6), ('F2', 'F5', 6), ('F5', 'F7', 8)]
+Boruvka's  | Cost = 34 | Edges = [('F1', 'F2', 5), ('F4', 'F6', 4), ('F2', 'F3', 6), ('F2', 'F5', 6), ('F5', 'F7', 8), ('F1', 'F4', 5)]

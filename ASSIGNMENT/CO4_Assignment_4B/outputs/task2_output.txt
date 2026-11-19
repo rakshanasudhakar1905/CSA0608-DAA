@@ -1,0 +1,19 @@
+=== TASK 2.1: NORMAL CASE (CAPACITY = 50) ===
+Fractional Greedy Total Value: 240.0
+   Take 100% of PKG-1 (W=10, V=60, Ratio=6.00) -> RemCap=40
+   Take 100% of PKG-2 (W=20, V=100, Ratio=5.00) -> RemCap=20
+   Take 66.7% of PKG-3 (W=20/30, V=80.00, Ratio=4.00) -> RemCap=0
+   Skip PKG-4: Knapsack full.
+Selected: [('PKG-1', 1.0, 10, 60.0), ('PKG-2', 1.0, 20, 100.0), ('PKG-3', 0.6667, 20, 80.0)]
+
+=== TASK 2.2: ADVERSARIAL CASE BREAKING GREEDY (CAPACITY = 50) ===
+Greedy 0/1 Result = 160 | Selected: [('PKG-A', 1.0, 10, 60), ('PKG-B', 1.0, 20, 100)]
+   COMMIT PKG-A (W=10, V=60, Ratio=6.00) -> RemCap=40
+   COMMIT PKG-B (W=20, V=100, Ratio=5.00) -> RemCap=20
+   REJECT PKG-C (W=30, V=150, Ratio=5.00) -> Exceeds RemCap=20
+DP 0/1 Optimum    = 250 | Selected: [('PKG-B', 1.0, 20, 100), ('PKG-C', 1.0, 30, 150)]
+Suboptimality Gap = 90 (Greedy != DP Optimum)
+
+=== TASK 2.3: ENGINEERING COMPARISON (N=20, W=500) ===
+Greedy Heuristic -> Value: 920 | Ops: 120 | Memory Cells: 20
+Exact DP         -> Value: 920 | Ops: 10040 | Memory Cells: 10521
